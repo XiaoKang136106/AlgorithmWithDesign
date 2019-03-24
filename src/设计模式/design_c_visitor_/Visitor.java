@@ -1,0 +1,15 @@
+package 设计模式.design_c_visitor_;
+
+import java.util.Collection;
+
+public interface Visitor {
+		
+	public void visitString(StringElement stringE);
+	
+	public void visitFloat(FloatElement floatE);
+	
+	
+	public void visitCollection(Collection collection);
+	
+	
+}

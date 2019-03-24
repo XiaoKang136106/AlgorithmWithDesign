@@ -1,0 +1,25 @@
+package 设计模式.design_c_visitor_;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test {
+
+    public static void main(String[] args) {
+        Visitor visitor = new ConcreteVisitor();
+        StringElement se = new StringElement("abc");
+        se.accept(visitor); //String
+        
+        FloatElement fe = new FloatElement(new Float(1.5));
+        fe.accept(visitor); //float
+        System.out.println("===========");
+        List result = new ArrayList();
+        result.add(new StringElement("abc"));
+        result.add(new StringElement("abc"));
+        result.add(new StringElement("abc"));
+        result.add(new FloatElement(new Float(1.5)));
+        result.add(new FloatElement(new Float(1.5)));
+        result.add(new FloatElement(new Float(1.5)));
+        visitor.visitCollection(result);
+    }
+}
